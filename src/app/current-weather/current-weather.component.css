@@ -1,0 +1,27 @@
+.row {
+    margin: auto;
+}
+
+.overall-container {
+    margin: auto;
+}
+
+.card-container {
+    text-align: center;
+}
+
+.card-contents {
+    background-color: #ADD8E6;
+    color: #000000;
+}
+
+.card-body-sub {
+    background-color: #72bcd4;
+    min-height: 15rem;
+    border-radius: 15%;
+    color: #ffffff;
+}
+
+.card-body-sub h1{
+    margin: 0;
+}

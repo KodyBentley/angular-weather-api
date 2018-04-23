@@ -1,0 +1,212 @@
+<div class="container">
+
+<div class="row zip-row">
+  <div class="col-lg-12">
+    <label>Zip:
+      <input #zip placeholder="Search by zip...">
+    </label>
+    <button (click)="click(zip.value)">Search</button>
+  </div>
+</div>
+<div class="error" *ngIf="error">
+  <h1>Zip code not found...</h1>
+  <span>
+    <i>Please enter a valid zip code.</i>
+  </span>
+</div>
+<div class="row overall-container" *ngFor="let i of arr">
+  <div class="col-lg-12 card-container" *ngIf="!error">
+    <div class="card-contents">
+      <div class="card-header">
+        <h1>5 Day Forecast</h1>
+        <h2>{{arr[0].city.name}}</h2>
+      </div>
+      <div class="card-body">
+
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+
+            <div class="card-body-sub item active">
+              <!-- <h1>{{this.timeConverter(data[0][0].dt).substr(0, 3)}}</h1> -->
+              <h1>{{this.timeConverter(data[0][0].dt).substr(15, 10)}}</h1>
+              <div class="row">
+                <div class="col-lg-3" *ngFor="let i of data[0]">
+                  <div class="inner-sub">
+                    <h4>
+                      <!-- <span>
+                        <i>Time: </i>
+                      </span>{{i.dt_txt.substr(11)}} -->
+                      {{this.timeConverter(i.dt)}}
+                      
+                    </h4>
+                    <h4>
+                      <span>
+                        <i>Conditions: </i>
+                      </span>{{i.weather[0].main}}
+                    </h4>
+                    <h4>
+                      <span>
+                        <i>Temp: </i>
+                      </span>{{i.main.temp.toFixed(1)}}F</h4>
+                    <h4>
+                      <span>
+                        <i>Humidity: </i>
+                      </span>{{i.main.humidity}}%</h4>
+                    <h4>
+                      <span>
+                        <i>Wind: </i>
+                      </span>{{i.wind.speed}} MPH</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-body-sub item">
+              <h1>{{this.timeConverter(data[1][0].dt).substr(0, 3)}}</h1>
+              <div class="row">
+                <div class="col-lg-3" *ngFor="let i of data[1]">
+                  <div class="inner-sub">
+                    <h4>
+                      <span>
+                        <i>Time: </i>
+                      </span>{{i.dt_txt.substr(11)}}</h4>
+                    <h4>
+                      <span>
+                        <i>Conditions: </i>
+                      </span>{{i.weather[0].main}}
+                    </h4>
+                    <h4>
+                      <span>
+                        <i>Temp: </i>
+                      </span>{{i.main.temp.toFixed(1)}}F</h4>
+                    <h4>
+                      <span>
+                        <i>Humidity: </i>
+                      </span>{{i.main.humidity}}%</h4>
+                    <h4>
+                      <span>
+                        <i>Wind: </i>
+                      </span>{{i.wind.speed}} MPH</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-body-sub item">
+              <h1>{{this.timeConverter(data[2][0].dt).substr(0, 3)}}</h1>
+              <div class="row">
+                <div class="col-lg-3" *ngFor="let i of data[2]">
+                  <div class="inner-sub">
+                    <h4>
+                      <span>
+                        <i>Time: </i>
+                      </span>{{i.dt_txt.substr(11)}}</h4>
+                    <h4>
+                      <span>
+                        <i>Conditions: </i>
+                      </span>{{i.weather[0].main}}
+                    </h4>
+                    <h4>
+                      <span>
+                        <i>Temp: </i>
+                      </span>{{i.main.temp.toFixed(1)}}F</h4>
+                    <h4>
+                      <span>
+                        <i>Humidity: </i>
+                      </span>{{i.main.humidity}}%</h4>
+                    <h4>
+                      <span>
+                        <i>Wind: </i>
+                      </span>{{i.wind.speed}} MPH</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-body-sub item">
+              <h1>{{this.timeConverter(data[3][0].dt).substr(0, 3)}}</h1>
+              <div class="row">
+                <div class="col-lg-3" *ngFor="let i of data[3]">
+                  <div class="inner-sub">
+                    <h4>
+                      <span>
+                        <i>Time: </i>
+                      </span>{{i.dt_txt.substr(11)}}</h4>
+                    <h4>
+                      <span>
+                        <i>Conditions: </i>
+                      </span>{{i.weather[0].main}}
+                    </h4>
+                    <h4>
+                      <span>
+                        <i>Temp: </i>
+                      </span>{{i.main.temp.toFixed(1)}}F</h4>
+                    <h4>
+                      <span>
+                        <i>Humidity: </i>
+                      </span>{{i.main.humidity}}%</h4>
+                    <h4>
+                      <span>
+                        <i>Wind: </i>
+                      </span>{{i.wind.speed}} MPH</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-body-sub item">
+              <h1>{{this.timeConverter(data[4][0].dt).substr(0, 3)}}</h1>
+              <div class="row">
+                <div class="col-lg-3" *ngFor="let i of data[4]">
+                  <div class="inner-sub">
+                    <h4>
+                      <span>
+                        <i>Time: </i>
+                      </span>{{i.dt_txt.substr(11)}}</h4>
+                    <h4>
+                      <span>
+                        <i>Conditions: </i>
+                      </span>{{i.weather[0].main}}
+                    </h4>
+                    <h4>
+                      <span>
+                        <i>Temp: </i>
+                      </span>{{i.main.temp.toFixed(1)}}F</h4>
+                    <h4>
+                      <span>
+                        <i>Humidity: </i>
+                      </span>{{i.main.humidity}}%</h4>
+                    <h4>
+                      <span>
+                        <i>Wind: </i>
+                      </span>{{i.wind.speed}} MPH</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>

@@ -1,0 +1,56 @@
+<div class="row zip-row">
+  <div class="col-lg-12">
+    <label>Zip:
+      <input #zip placeholder="Search by zip...">
+    </label>
+    <button (click)="click(zip.value)">Search</button>
+  </div>
+</div>
+<div class="error" *ngIf="error">
+  <h1>Zip code not found...</h1>
+  <span>
+    <i>Please enter a valid zip code.</i>
+  </span>
+</div>
+<div class="row overall-container" *ngFor="let i of arr">
+  <div class="col-lg-12 card-container" *ngIf="!error">
+    <div class="card-contents">
+      <div class="card-header">
+        <h1>{{data.name}}</h1>
+        <h2>{{data.weather[0].description.toUpperCase()}}</h2>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="card-body-sub">
+              <img src={{imgUrl}}>
+              <h1>Temp</h1>
+              <h4>{{data.main.temp.toFixed(1)}}F</h4>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="card-body-sub">
+              <img src={{imgUrl}}>
+              <h1>Hi/Lo</h1>
+              <h4>L:{{data.main.temp_min}}F/H:{{data.main.temp_max}}F</h4>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="card-body-sub">
+              <img src={{imgUrl}}>
+              <h1>Humidity</h1>
+              <h4>{{data.main.humidity}}%</h4>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="card-body-sub">
+              <img src={{imgUrl}}>
+              <h1>Wind</h1>
+              <h4>{{data.wind.speed}} MPH</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

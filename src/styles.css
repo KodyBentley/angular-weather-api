@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+    background-image: url('/assets/img/cloud-bg.png')
+}
+
+.zip-row {
+    text-align: center;
+    padding-top: 1rem;
+    color: #000000;
+}

@@ -1,0 +1,56 @@
+/* .container {
+    background-image: url('../../assets/img/cloud-bg.png') !important;
+} */
+
+.row {
+    margin: auto;
+}
+
+.overall-container {
+    margin: auto;
+    margin-bottom: 5%;
+}
+
+.card-container {
+    text-align: center;
+}
+
+.card-contents {
+    color: #000000;
+    background-color: #ADD8E6;
+}
+
+.inner-sub {
+    background-color: #ffffff;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border-radius: 15%;
+}
+
+.carousel {
+    background-color: #ADD8E6;
+}
+
+.carousel-indicators {
+    visibility: hidden;
+}
+
+.card-header h1 {
+    padding-top: 1rem;
+    text-decoration: underline;
+}
+
+.card-header h2 {
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.card-body-sub {
+    background-color: #ADD8E6;
+}
+
+.card-body-sub h1{
+    color: #000000;
+}
